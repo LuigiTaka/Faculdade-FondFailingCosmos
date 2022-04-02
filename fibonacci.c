@@ -2,7 +2,7 @@
 
 
 int fibonacci(int i) {
-
+  
    if(i == 0) {
       return 0;
    }
@@ -16,12 +16,23 @@ int fibonacci(int i) {
 
 int main(void) {
   
-    int posicao = 0, resultado = 0;
+    int posicao = 0, resultado;
+    char ordenacao;
 
     printf("Digite quantos números da sequência de fibonacci você gostaria hoje: ");
     scanf("%i", &posicao);
 
-    printf("%i",posicao);
+    if(posicao > 42){ 
+      printf("Remova essa condição e compile o código de novo por sua conta e risco."); 
+      return 0;
+    }
+  
+    do{
+      resultado = fibonacci(posicao);
+      printf("%iª.  %i\n",posicao,resultado);
+      
+      posicao -= 1;
+    }while( resultado != 0 );
   
     return 0;
   
